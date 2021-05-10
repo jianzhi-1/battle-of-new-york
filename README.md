@@ -5,6 +5,8 @@
 [Try it out now!](https://winter-fire-muskmelon.glitch.me)
 [Watch the YouTube Demo!](https://www.youtube.com/watch?v=z9MDNAkNInU)
 
+![A Leviathan!](https://github.com/jianzhi-1/battle-of-new-york/raw/main/leviathan.png "A Leviathan!")
+
 ## Introduction
 
 This game simulates the Battle of New York in Avengers. You are Iron Man and you face an endless army of leviathans. Use your cursor or VR headset to scan your surroundings and voice your commands to fire energy bolts at those menaces.
