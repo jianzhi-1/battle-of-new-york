@@ -38,7 +38,7 @@ The voice commands below and their equivalent are supported.
 
 #### Music and Sound Effects
 - Boom/Slam/Impact Sounds: https://www.playonloop.com/sound-effects-for-videos/boom-slam-impact-sounds/ (Creative Commons Attribution License)
-- Sound from Zapsplat.com [Hurt, Electricity, Monster Screech, Sinister Atmosphere]
+- “Sound effects obtained from https://www.zapsplat.com“ [Hurt, Electricity, Monster Screech, Sinister Atmosphere]
 
 #### Logo
 - https://www.pngwing.com/en/free-png-zwrla (DMCA)
