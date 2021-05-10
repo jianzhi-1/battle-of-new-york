@@ -1,0 +1,109 @@
+<!-- Copyright (c) Facebook, Inc. and its affiliates. -->
+
+<html>
+	<head>
+		<link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
+		<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+		<script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+		<script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
+		<script src="voice.js"></script>
+		<script src="drone.js"></script>
+		<script src="fireball.js"></script>
+		<script src="camera.js"></script>
+		<script src="bullet.js"></script>
+		<!-- physics and other extras -->
+		
+	</head>
+	<body>
+		<a-scene physics="debug: true">
+			<a-sound id="sinister" src="url(sinister.mp3)" autoplay="true" loop="true" position="0 2 5"></a-sound>
+			<a-sound id="boom1" src="url(boom1.mp3)" autoplay="false" position="0 2 5"></a-sound>
+			<a-sound id="boom2" src="url(boom2.mp3)" autoplay="false" position="0 2 5"></a-sound>
+			<a-sound id="lightning" src="url(lightning2.mp3)" autoplay="false" position="0 2 5"></a-sound>
+			<a-sound id="chitauri" src="url(demonsound.mp3)" autoplay="false" position="0 2 5"></a-sound>
+			<a-sound id="machinegun" src="url(machinegun.mp3)" autoplay="false" position="0 2 5"></a-sound>
+			<a-sound id="dronedestroy" src="url(dronedestroyed.mp3)" autoplay="false" position="0 2 5"></a-sound>
+			<a-sound id="hurt" src="url(hurt.mp3)" autoplay="false" position="0 2 5"></a-sound>
+			<a-assets>
+				<a-asset-item id="evil-robot" response-type="arraybuffer" src="./cooperative-potato.glb"></a-asset-item>
+			</a-assets>
+			<a-assets>
+				<a-asset-item id="drone" response-type="arraybuffer" src="./drone.gltf"></a-asset-item>
+			</a-assets>
+			<a-assets>
+				<a-asset-item id="fireball" response-type="arraybuffer" src="./fireball.gltf"></a-asset-item>
+			</a-assets>
+			<a-assets>
+				<a-asset-item id="tesla" response-type="arraybuffer" src="./tesla.gltf"></a-asset-item>
+			</a-assets>
+			<a-assets>
+				<a-asset-item id="levithan" response-type="arraybuffer" src="./levithan.gltf"></a-asset-item>
+			</a-assets>
+			<a-assets>
+				<a-asset-item id="bullet" response-type="arraybuffer" src="./bullet.gltf"></a-asset-item>
+			</a-assets>
+			<a-entity
+				id="text-object" 
+				text="value: Try saying: 'Hey Gizmo, I add a box'; color: #FAFAFA; width: 5; anchor: align"
+				position="-2.5 0.2 -3" 
+				scale="1.5 1.5 1.5"
+				error-message
+				voice-command
+			>
+			<a-camera rotation-reader id="mainCamera" wasd-controls-enabled="false">
+				<a-cursor></a-cursor>
+				<a-entity id="scoreboard" scale="0.5 0.5 0.5" text="value: Score: 0; color: blue; width: 2;" position="1 0.8 -1" ></a-entity>
+				<a-entity id="healthboard" scale="0.5 0.5 0.5" text="value: Health: 4; color: green; width: 2;" position="-0.2 0.8 -1" ></a-entity>
+				<a-entity id="startgame" scale="0.5 0.5 0.5" text="value: Say 'Start Game' to play!; color: yellow; width: 2;" position="0 0 -1" visible="true"></a-entity>
+				<a-entity id="endgame" scale="0.5 0.5 0.5" text="value: A chitauri gnawed you to pieces. You've reached endgame!; color: yellow; width: 2;" position="0 0 -1" visible="false"></a-entity>
+			</a-camera>
+			<!--
+			<a-entity gltf-model="#evil-robot" position="0 0 0"></a-entity>
+			-->
+			<!--
+			<a-entity gltf-model="#drone" scale="0.002 0.002 0.002" position="0 5 0"
+				animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
+			></a-entity>
+			-->
+
+			<a-entity gltf-model="#drone" animation-mixer scale="0.002 0.002 0.002" position="5 5 5"
+			visible="false" id="jarvis1"
+			></a-entity>
+
+			<a-entity gltf-model="#drone" animation-mixer scale="0.002 0.002 0.002" position="-5 5 -5"
+			visible="false" id="jarvis2"
+			></a-entity>
+
+			<a-entity gltf-model="#levithan" animation-mixer scale="2 2 2" position="5 5 5" enemy-drone
+			id="drone-object"
+			></a-entity>
+
+			<a-entity gltf-model="#fireball" animation-mixer scale="0.02 0.02 0.02" position="0 -50 0" firebolt
+			id="firebolt" 
+			></a-entity>
+
+			<a-entity gltf-model="#bullet" animation-mixer scale="0.001 0.001 0.001" position="0 -50 0" drone-bullet
+			id="dronebullet" 
+			></a-entity>
+			
+			<a-entity gltf-model="#tesla" scale="1 1 1" position="50 0 50" 
+			id="tesla1" 
+			></a-entity>
+			<!-- TESLAS very expensive
+			<a-entity gltf-model="#tesla" scale="1 1 1" position="50 0 -50" 
+			id="tesla2" 
+			></a-entity>
+			<a-entity gltf-model="#tesla" scale="1 1 1" position="-50 0 -50" 
+			id="tesla3" 
+			></a-entity>
+			<a-entity gltf-model="#tesla" scale="1 1 1" position="-50 0 50" 
+			id="tesla4" 
+			></a-entity>
+			-->
+			<a-entity environment="preset: contact; dressingAmount: 10"></a-entity>
+		</a-scene>
+	</body>
+	
+</html>
