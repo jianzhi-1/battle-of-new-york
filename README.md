@@ -1,5 +1,9 @@
 ﻿# Battle Of New York
-#### Voice Controlled VR Game
+ 
+#### A voice-controlled VR game - designed to simulate being in an Iron Man suit
+
+[Try it out now!](https://winter-fire-muskmelon.glitch.me)
+[Watch the YouTube Demo!](https://www.youtube.com/watch?v=z9MDNAkNInU)
 
 ## Introduction
 
