@@ -1,29 +1,17 @@
 ﻿# Battle Of New York
 #### Voice Controlled VR Game
 
-
 ## Introduction
 
 This game simulates the Battle of New York in Avengers. You are Iron Man and you face an endless army of leviathans. Use your cursor to scan your surroundings and voice your commands to fire energy bolts at the menaces.
 
 Built with Aframe and powered by Wit.ai.
 
-## Prerequisites
-
-
-*   Create a [Wit.ai](https://wit.ai) account
-*   Use a Web-Speech-API [compatible browser](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API#browser_compatibility)
-*   Use a WebGL [compatible browser](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API#browser_compatibility)
-*   Have a microphone connected to your computer
-
-
 ## Launching the Game
-
 
 *   Ask the developer for the WIT token and update 'TOKEN' in src/voice.js
 *   Run $ python -m http.server
 *   Allow microphone access
-
 
 ## Supported Voice Commands
 
