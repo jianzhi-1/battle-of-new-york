@@ -2,9 +2,11 @@
  
 #### A voice-controlled VR game - designed to simulate being in an Iron Man suit
 
-[Try it out now!](https://winter-fire-muskmelon.glitch.me)
-[Watch the YouTube Demo!](https://www.youtube.com/watch?v=z9MDNAkNInU)
 [🥉 Third Place at F8 Refresh Hackathon 2021](https://developers.facebook.com/blog/post/2021/06/02/f8-refresh-hackathon-winners-announced/)
+
+[Try it out now!](https://winter-fire-muskmelon.glitch.me)
+
+[Watch the YouTube Demo!](https://www.youtube.com/watch?v=z9MDNAkNInU)
 
 ![A Leviathan!](https://github.com/jianzhi-1/battle-of-new-york/raw/main/leviathan.png "A Leviathan!")
 
